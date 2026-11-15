@@ -1,0 +1,104 @@
+{
+  "clientes" : [ {
+    "id" : 1,
+    "rut" : "12345678-9",
+    "nombre" : "Ana Pérez",
+    "email" : "ana@mail.com",
+    "telefono" : "+56911112222"
+  }, {
+    "id" : 2,
+    "rut" : "98765432-1",
+    "nombre" : "Carlos Muñoz",
+    "email" : "carlos@mail.com",
+    "telefono" : "+56933334444"
+  }, {
+    "id" : 3,
+    "rut" : "15222333-4",
+    "nombre" : "Sofía Rojas",
+    "email" : "sofia@mail.com",
+    "telefono" : "+56955556666"
+  } ],
+  "mesas" : [ {
+    "id" : 1,
+    "numero" : 1,
+    "capacidad" : 2,
+    "ubicacion" : "Salón",
+    "activa" : true
+  }, {
+    "id" : 2,
+    "numero" : 2,
+    "capacidad" : 4,
+    "ubicacion" : "Terraza",
+    "activa" : true
+  }, {
+    "id" : 3,
+    "numero" : 3,
+    "capacidad" : 4,
+    "ubicacion" : "Salón",
+    "activa" : true
+  }, {
+    "id" : 4,
+    "numero" : 4,
+    "capacidad" : 6,
+    "ubicacion" : "Terraza",
+    "activa" : true
+  }, {
+    "id" : 5,
+    "numero" : 5,
+    "capacidad" : 8,
+    "ubicacion" : "Privado",
+    "activa" : true
+  }, {
+    "id" : 6,
+    "numero" : 6,
+    "capacidad" : 2,
+    "ubicacion" : "Barra",
+    "activa" : false
+  } ],
+  "reservas" : [ {
+    "id" : 1,
+    "clienteId" : 1,
+    "mesaId" : 2,
+    "fecha" : "2026-11-20",
+    "turno" : "CENA_1",
+    "cantidadPersonas" : 3,
+    "estado" : "ACTIVA",
+    "observaciones" : "Mesa cerca de la ventana"
+  }, {
+    "id" : 2,
+    "clienteId" : 2,
+    "mesaId" : 4,
+    "fecha" : "2026-11-20",
+    "turno" : "ALMUERZO_1",
+    "cantidadPersonas" : 5,
+    "estado" : "ACTIVA",
+    "observaciones" : "Almuerzo familiar"
+  }, {
+    "id" : 3,
+    "clienteId" : 3,
+    "mesaId" : 1,
+    "fecha" : "2026-11-21",
+    "turno" : "CENA_2",
+    "cantidadPersonas" : 2,
+    "estado" : "CANCELADA",
+    "observaciones" : "Cancelada por el cliente"
+  }, {
+    "id" : 4,
+    "clienteId" : 1,
+    "mesaId" : 3,
+    "fecha" : "2026-11-20",
+    "turno" : "CENA_1",
+    "cantidadPersonas" : 4,
+    "estado" : "CANCELADA",
+    "observaciones" : "Prueba"
+  }, {
+    "id" : 5,
+    "clienteId" : 1,
+    "mesaId" : 3,
+    "fecha" : "2026-11-20",
+    "turno" : "CENA_1",
+    "cantidadPersonas" : 4,
+    "estado" : "ACTIVA",
+    "observaciones" : "Cumpleaños"
+  } ]
+}

@@ -1,0 +1,222 @@
+{
+  "info": {
+    "name": "Sabor Gourmet API",
+    "description": "Colección de pruebas para la API REST de reservas del restaurante Sabor Gourmet",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:8080"
+    }
+  ],
+  "item": [
+    {
+      "name": "1. Clientes",
+      "item": [
+        {
+          "name": "Listar clientes (200)",
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/clientes"
+          }
+        },
+        {
+          "name": "Crear cliente válido (201)",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"rut\": \"18999888-7\",\n  \"nombre\": \"Diego Torres\",\n  \"email\": \"diego@mail.com\",\n  \"telefono\": \"+56977778888\"\n}"
+            },
+            "url": "{{baseUrl}}/api/clientes"
+          }
+        },
+        {
+          "name": "Obtener cliente por ID (200)",
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/clientes/4"
+          }
+        },
+        {
+          "name": "Actualizar cliente (200)",
+          "request": {
+            "method": "PUT",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"rut\": \"18999888-7\",\n  \"nombre\": \"Diego Torres Silva\",\n  \"email\": \"diego@mail.com\",\n  \"telefono\": \"+56977779999\"\n}"
+            },
+            "url": "{{baseUrl}}/api/clientes/4"
+          }
+        },
+        {
+          "name": "Eliminar cliente con reserva activa (409)",
+          "request": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/api/clientes/1"
+          }
+        },
+        {
+          "name": "Eliminar cliente sin reservas activas (204)",
+          "request": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/api/clientes/4"
+          }
+        }
+      ]
+    },
+    {
+      "name": "2. Mesas y Disponibilidad",
+      "item": [
+        {
+          "name": "Listar mesas (200)",
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/mesas"
+          }
+        },
+        {
+          "name": "Crear mesa válida (201)",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"numero\": 7,\n  \"capacidad\": 4,\n  \"ubicacion\": \"Salón\",\n  \"activa\": true\n}"
+            },
+            "url": "{{baseUrl}}/api/mesas"
+          }
+        },
+        {
+          "name": "Consultar disponibilidad 20-11 CENA_1 4 personas (200)",
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/mesas/disponibles?fecha=2026-11-20&turno=CENA_1&personas=4"
+          }
+        },
+        {
+          "name": "Eliminar mesa con reserva activa (409)",
+          "request": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/api/mesas/2"
+          }
+        },
+        {
+          "name": "Eliminar mesa sin reservas activas (204)",
+          "request": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/api/mesas/7"
+          }
+        }
+      ]
+    },
+    {
+      "name": "3. Reservas",
+      "item": [
+        {
+          "name": "Listar reservas (200)",
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/reservas"
+          }
+        },
+        {
+          "name": "Crear reserva válida (201)",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"clienteId\": 1,\n  \"mesaId\": 3,\n  \"fecha\": \"2026-11-20\",\n  \"turno\": \"CENA_1\",\n  \"cantidadPersonas\": 4,\n  \"observaciones\": \"Cumpleaños\"\n}"
+            },
+            "url": "{{baseUrl}}/api/reservas"
+          }
+        },
+        {
+          "name": "Crear reserva superpuesta (409)",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"clienteId\": 2,\n  \"mesaId\": 3,\n  \"fecha\": \"2026-11-20\",\n  \"turno\": \"CENA_1\",\n  \"cantidadPersonas\": 2,\n  \"observaciones\": \"Intento duplicado\"\n}"
+            },
+            "url": "{{baseUrl}}/api/reservas"
+          }
+        },
+        {
+          "name": "Crear reserva excede capacidad (400)",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"clienteId\": 1,\n  \"mesaId\": 1,\n  \"fecha\": \"2026-11-22\",\n  \"turno\": \"CENA_1\",\n  \"cantidadPersonas\": 6,\n  \"observaciones\": \"Grupo grande\"\n}"
+            },
+            "url": "{{baseUrl}}/api/reservas"
+          }
+        },
+        {
+          "name": "Crear reserva fecha pasada / campos inválidos (400)",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"clienteId\": 1,\n  \"mesaId\": 1,\n  \"fecha\": \"2020-01-01\",\n  \"turno\": \"CENA_1\",\n  \"cantidadPersonas\": 0\n}"
+            },
+            "url": "{{baseUrl}}/api/reservas"
+          }
+        },
+        {
+          "name": "Crear reserva cliente inexistente (404)",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"clienteId\": 999,\n  \"mesaId\": 1,\n  \"fecha\": \"2026-11-22\",\n  \"turno\": \"CENA_1\",\n  \"cantidadPersonas\": 2\n}"
+            },
+            "url": "{{baseUrl}}/api/reservas"
+          }
+        },
+        {
+          "name": "Modificar reserva cambiar turno (200)",
+          "request": {
+            "method": "PUT",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"clienteId\": 1,\n  \"mesaId\": 3,\n  \"fecha\": \"2026-11-20\",\n  \"turno\": \"CENA_2\",\n  \"cantidadPersonas\": 4,\n  \"observaciones\": \"Cambio a CENA_2\"\n}"
+            },
+            "url": "{{baseUrl}}/api/reservas/4"
+          }
+        },
+        {
+          "name": "Cancelar reserva (200)",
+          "request": {
+            "method": "PATCH",
+            "url": "{{baseUrl}}/api/reservas/4/cancelar"
+          }
+        },
+        {
+          "name": "Cancelar reserva nuevamente (409)",
+          "request": {
+            "method": "PATCH",
+            "url": "{{baseUrl}}/api/reservas/4/cancelar"
+          }
+        },
+        {
+          "name": "Obtener reserva inexistente (404)",
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/reservas/999"
+          }
+        }
+      ]
+    }
+  ]
+}
