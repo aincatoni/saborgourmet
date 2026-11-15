@@ -1,3 +1,19 @@
+# EVALUACIÓN SUMATIVA UNIDAD Nº 2
+## DESARROLLO DE SOFTWARE WEB II
+
+---
+
+### DATOS DE IDENTIFICACIÓN
+* **Institución:** Instituto Profesional San Sebastián (IPSS)
+* **Carrera:** Ingeniería en Conectividad y Redes / Informática
+* **Asignatura:** Desarrollo de Software Web II
+* **Unidad Temática:** Unidad 2 – API REST con Spring Boot, Arquitectura CSR y Persistencia en JSON
+* **Docente:** Victor Israel Cofre Farias
+* **Estudiante(s):** Ain Catoni - Pía Alarcón
+* **Año Lectivo:** 2026
+
+---
+
 # Sabor Gourmet API
 
 API REST desarrollada con Spring Boot (Java 21) para la gestión de clientes, mesas, disponibilidad y reservas del restaurante **Sabor Gourmet**, utilizando arquitectura **CSR (Controller → Service → Repository)** y persistencia en archivo JSON mediante Jackson.
