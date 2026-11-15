@@ -64,46 +64,46 @@ Importar la colección ubicada en `postman/SaborGourmet.postman_collection.json`
 
 ## Evidencias de pruebas
 
-Las capturas de ejecución en Postman y prueba de persistencia tras reinicio se encuentran en [`../capturas/`](../capturas/).
+Las capturas de ejecución en Postman y prueba de persistencia tras reinicio se encuentran en [`capturas/`](capturas/).
 
 ### Clientes
 | Caso | Evidencia |
 |---|---|
-| Listar clientes (`GET /api/clientes`) | ![Listar clientes](../capturas/listar_clientes.png) |
-| Obtener cliente por ID (`GET /api/clientes/{id}`) | ![Obtener cliente](../capturas/listar_cliente.png) |
-| Crear cliente (`POST /api/clientes`) | ![Crear cliente](../capturas/crear_cliente.png) |
-| Crear cliente (caso adicional) | ![Crear cliente 01](../capturas/crear_cliente_01.png) |
-| Actualizar cliente (`PUT /api/clientes/{id}`) | ![Actualizar cliente](../capturas/actualizar_cliente.png) |
-| Eliminar cliente con reserva activa (`409`) | ![Eliminar cliente con reserva activa](../capturas/eliminar_cliente_con_reserva_activa.png) |
-| Eliminar cliente sin reservas activas (`204`) | ![Eliminar cliente sin reserva activa](../capturas/eliminar_cliente_sin_reserva_activa.png) |
+| Listar clientes (`GET /api/clientes`) | ![Listar clientes](capturas/listar_clientes.png) |
+| Obtener cliente por ID (`GET /api/clientes/{id}`) | ![Obtener cliente](capturas/listar_cliente.png) |
+| Crear cliente (`POST /api/clientes`) | ![Crear cliente](capturas/crear_cliente.png) |
+| Crear cliente (caso adicional) | ![Crear cliente 01](capturas/crear_cliente_01.png) |
+| Actualizar cliente (`PUT /api/clientes/{id}`) | ![Actualizar cliente](capturas/actualizar_cliente.png) |
+| Eliminar cliente con reserva activa (`409`) | ![Eliminar cliente con reserva activa](capturas/eliminar_cliente_con_reserva_activa.png) |
+| Eliminar cliente sin reservas activas (`204`) | ![Eliminar cliente sin reserva activa](capturas/eliminar_cliente_sin_reserva_activa.png) |
 
 ### Mesas y disponibilidad
 | Caso | Evidencia |
 |---|---|
-| Listar mesas (`GET /api/mesas`) | ![Listar mesas](../capturas/mesas_listar.png) |
-| Crear mesa (`POST /api/mesas`) | ![Crear mesa](../capturas/mesas_crear.png) |
-| Consultar disponibilidad (`GET /api/mesas/disponibles`) | ![Consultar disponibilidad](../capturas/mesas_consultar_disponibilidad.png) |
-| Eliminar mesa con reserva activa (`409`) | ![Eliminar mesa con reserva activa](../capturas/mesas_eliminar_mesa_con_reserva.png) |
-| Eliminar mesa sin reservas activas (`204`) | ![Eliminar mesa sin reserva activa](../capturas/mesas_eliminar_sin_reserva.png) |
+| Listar mesas (`GET /api/mesas`) | ![Listar mesas](capturas/mesas_listar.png) |
+| Crear mesa (`POST /api/mesas`) | ![Crear mesa](capturas/mesas_crear.png) |
+| Consultar disponibilidad (`GET /api/mesas/disponibles`) | ![Consultar disponibilidad](capturas/mesas_consultar_disponibilidad.png) |
+| Eliminar mesa con reserva activa (`409`) | ![Eliminar mesa con reserva activa](capturas/mesas_eliminar_mesa_con_reserva.png) |
+| Eliminar mesa sin reservas activas (`204`) | ![Eliminar mesa sin reserva activa](capturas/mesas_eliminar_sin_reserva.png) |
 
 ### Reservas
 | Caso | Evidencia |
 |---|---|
-| Listar reservas (`GET /api/reservas`) | ![Listar reservas](../capturas/reservas_listar.png) |
-| Crear reserva válida (`201`) | ![Crear reserva válida](../capturas/reservas_crear_reserva_valida.png) |
-| Crear reserva superpuesta (`409`) | ![Crear reserva superpuesta](../capturas/reserveras_crear_reserva_superpuesta.png) |
-| Crear reserva excede capacidad (`400`) | ![Crear reserva excede capacidad](../capturas/reserva_crear_reserva_excede_cantidad.png) |
-| Crear reserva fecha pasada / datos inválidos (`400`) | ![Crear reserva fecha pasada](../capturas/reservas_crear_resrrva_fecha_pasada.png) |
-| Crear reserva cliente inexistente (`404`) | ![Crear reserva cliente inexistente](../capturas/reservas_crear_reserva_cliente_inexistente.png) |
-| Modificar reserva / cambio de turno (`200`) | ![Modificar reserva](../capturas/reservas_modificar_reserva_cambio_turno.png) |
-| Cancelar reserva (`PATCH /api/reservas/{id}/cancelar`, `200`) | ![Cancelar reserva](../capturas/reservas_cancelar.png) |
-| Cancelar reserva nuevamente (`409`) | ![Cancelar reserva nuevamente](../capturas/reservas_cancelar_nuevamente.png) |
-| Obtener reserva inexistente (`404`) | ![Obtener reserva inexistente](../capturas/reservas_obtener_reserva_inexistente.png) |
+| Listar reservas (`GET /api/reservas`) | ![Listar reservas](capturas/reservas_listar.png) |
+| Crear reserva válida (`201`) | ![Crear reserva válida](capturas/reservas_crear_reserva_valida.png) |
+| Crear reserva superpuesta (`409`) | ![Crear reserva superpuesta](capturas/reserveras_crear_reserva_superpuesta.png) |
+| Crear reserva excede capacidad (`400`) | ![Crear reserva excede capacidad](capturas/reserva_crear_reserva_excede_cantidad.png) |
+| Crear reserva fecha pasada / datos inválidos (`400`) | ![Crear reserva fecha pasada](capturas/reservas_crear_resrrva_fecha_pasada.png) |
+| Crear reserva cliente inexistente (`404`) | ![Crear reserva cliente inexistente](capturas/reservas_crear_reserva_cliente_inexistente.png) |
+| Modificar reserva / cambio de turno (`200`) | ![Modificar reserva](capturas/reservas_modificar_reserva_cambio_turno.png) |
+| Cancelar reserva (`PATCH /api/reservas/{id}/cancelar`, `200`) | ![Cancelar reserva](capturas/reservas_cancelar.png) |
+| Cancelar reserva nuevamente (`409`) | ![Cancelar reserva nuevamente](capturas/reservas_cancelar_nuevamente.png) |
+| Obtener reserva inexistente (`404`) | ![Obtener reserva inexistente](capturas/reservas_obtener_reserva_inexistente.png) |
 
 ### Prueba de reinicio (persistencia en JSON)
 | Paso | Evidencia |
 |---|---|
-| Reinicio 01 | ![Reinicio 01](../capturas/reinicio/reinicio_01.png) |
-| Reinicio 02 | ![Reinicio 02](../capturas/reinicio/reinicio_02.png) |
-| Reinicio 03 | ![Reinicio 03](../capturas/reinicio/reinicio_03.png) |
-| Reinicio 04 | ![Reinicio 04](../capturas/reinicio/reinicio_04.png) |
+| Reinicio 01 | ![Reinicio 01](capturas/reinicio/reinicio_01.png) |
+| Reinicio 02 | ![Reinicio 02](capturas/reinicio/reinicio_02.png) |
+| Reinicio 03 | ![Reinicio 03](capturas/reinicio/reinicio_03.png) |
+| Reinicio 04 | ![Reinicio 04](capturas/reinicio/reinicio_04.png) |
