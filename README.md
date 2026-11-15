@@ -10,7 +10,8 @@
 * **Unidad Temática:** Unidad 2 – API REST con Spring Boot, Arquitectura CSR y Persistencia en JSON
 * **Docente:** Victor Israel Cofre Farias
 * **Estudiante(s):** Ain Catoni - Pía Alarcón
-* **Año Lectivo:** 2026
+* **Sección:** 51
+* **Año:** 2026
 
 ---
 
